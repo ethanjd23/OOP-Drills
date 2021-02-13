@@ -71,3 +71,63 @@ let human5 = new Human("Timea", "Atlanta", 22);
 // human3.sayHello();
 // human4.sayHello();
 // human5.sayHello();
+
+//Inheritance
+class Vehicle {
+    constructor(manufacturer, numOfWheels) {
+        this.manufacturer = manufacturer;
+        this.numOfWheels = numOfWheels;
+    }
+
+    aboutVehicle() {
+        console.log(`Vehicle made by ${this.manufacturer} with ${this.numOfWheels} wheels.`)
+    }
+};
+
+class Truck extends Vehicle {
+    constructor(manufacturer, numOfWheels, numOfDoors, truckBed = true) {
+        super(manufacturer, numOfWheels);
+        this.numOfDoors = numOfDoors;
+        this.truckBed = truckBed;
+    }
+
+    aboutVehicle() {
+        console.log(`Truck made by ${this.manufacturer} with ${this.numOfWheels} wheels and ${this.numOfDoors} doors. The claim it has a bed is ${this.truckBed}`)
+    }
+};
+
+class Sedan extends Vehicle {
+    constructor(manufacturer, numOfWheels, numOfDoors, size, mpg, truckBed = false) {
+        super(manufacturer, numOfWheels);
+        this.numOfDoors = numOfDoors;
+        this.size = size;
+        this.mpg = mpg;
+        this.truckBed = truckBed;
+    }
+
+    aboutVehicle() {
+        console.log(`Sedan made by ${this.manufacturer} with ${this.numOfWheels} wheels and ${this.numOfDoors} doors. It's a ${this.size} size with ${this.mpg} mpg. The claim it has a bed is ${this.truckBed}`)
+    }
+};
+
+class Motorcycle extends Vehicle {
+    constructor(manufacturer, numOfWheels, handlebars = true, numOfDoors = 0) {
+        super(manufacturer, numOfWheels);
+        this.handlebars = handlebars;
+        this.numOfDoors = numOfDoors;
+    }
+
+    aboutVehicle() {
+        console.log(`Motorcycle made by ${this.manufacturer} with ${this.numOfWheels} wheels. It has ${this.numOfDoors} doors. It's ${this.handlebars}, it doesn't have a steering wheel.`)
+    }
+};
+
+let vehicle = new Vehicle("Volkswagen", 4);
+let truck = new Truck("Chevrolet", 6, 2);
+let sedan = new Sedan("Volvo", 4, 2, "small", 22);
+let motorcycle = new Motorcycle("Toyota", 2);
+
+vehicle.aboutVehicle();
+truck.aboutVehicle();
+sedan.aboutVehicle();
+motorcycle.aboutVehicle();
