@@ -127,7 +127,7 @@ let truck = new Truck("Chevrolet", 6, 2);
 let sedan = new Sedan("Volvo", 4, 2, "small", 22);
 let motorcycle = new Motorcycle("Toyota", 2);
 
-vehicle.aboutVehicle();
-truck.aboutVehicle();
-sedan.aboutVehicle();
-motorcycle.aboutVehicle();
+// vehicle.aboutVehicle();
+// truck.aboutVehicle();
+// sedan.aboutVehicle();
+// motorcycle.aboutVehicle();
